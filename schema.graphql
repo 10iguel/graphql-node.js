@@ -30,12 +30,14 @@ type RootMutation {
     createUser(userInput: UserInputData): User!
     deletePost(id: ID!): Boolean
     updatePost(id: ID!, postInput: PostInputData): Post!
+    updateStatus(status: String!): User!
 }
 
 type RootQuery {
     login(email: String!, password: String!): AuthData!
     post(id: ID!): Post!
     posts(page: Int): PostData!
+    user: User!
 }
 
 type User {
